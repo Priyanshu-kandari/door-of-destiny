@@ -11,6 +11,10 @@
       border-radius: 20px;
       box-shadow: 0 0 20px yellow;
       transition: 0.3s ease;
+      width: 100%;
+      max-width: 400px;
+      min-width: 280px;
+      height: auto;
     }
 
     #red:hover {
@@ -38,40 +42,57 @@
     }
 
     h1 {
-      font-size: 80px;
+      font-size: 6vw;
       margin-top: 20px;
     }
 
     p {
-      font-size: 30px;
+      font-size: 1.8vw;
     }
 
     .door-container {
-      margin: 40px auto;
-      max-width: 900px;
+      margin: 5vh auto;
+      max-width: 1000px;
     }
 
     .doors {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      flex-wrap: nowrap;
+      gap: 3vw;
     }
 
     .labels {
       display: flex;
-      justify-content: space-between;
-      padding: 10px 100px 0 100px;
+      justify-content: space-evenly;
+      padding: 2vh 5vw 0 5vw;
     }
 
     .red-label {
       color: rgb(255, 0, 0);
       text-shadow: 0 0 20px rgb(255, 0, 0);
       text-align: center;
+      font-size: 1.5vw;
     }
 
     .blue-label {
       color: rgb(17, 0, 255);
       text-shadow: 0 0 20px rgb(17, 0, 255);
       text-align: center;
+      font-size: 1.5vw;
+    }
+
+    @media screen and (max-width: 900px) {
+      .doors {
+        flex-wrap: wrap; /* allow stacking only on very small screens if absolutely needed */
+      }
+      #red, #blue {
+        max-width: 80vw;
+      }
+      .red-label,
+      .blue-label {
+        font-size: 3vw;
+      }
     }
   </style>
 </head>
@@ -87,10 +108,10 @@
   <div class="door-container">
     <div class="doors">
       <a href="red.html">
-        <img id="red" src="red door.png" height="500px" alt="Red Door">
+        <img id="red" src="red door.png" alt="Red Door">
       </a>
       <a href="blue.html">
-        <img id="blue" src="blue door.png" height="500px" alt="Blue Door">
+        <img id="blue" src="blue door.png" alt="Blue Door">
       </a>
     </div>
 
